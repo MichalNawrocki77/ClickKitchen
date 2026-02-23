@@ -4,6 +4,7 @@ using InteractiveKitchen;
 using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using InteractiveKitchen.Debugging;
+using Zenject;
 
 namespace InteractiveKitchen.Cursors
 {    
@@ -17,21 +18,20 @@ namespace InteractiveKitchen.Cursors
         [SerializeField] bool HideCursor;
         #endif
 
-        CustomCursor[] allCustomCursors;
+        [Inject] CustomCursor[] allCustomCursors;
         public CustomCursor CurrentCursor { get; private set; }
 
 
-        GlobalGameInput input;
+        [Inject] GlobalGameInput input;
         void Awake()
         {
-            input = new GlobalGameInput();
-            input.UI.Enable();
-            allCustomCursors = GetComponentsInChildren<CustomCursor>(true);
+            if(!input.UI.enabled)
+                input.UI.Enable();
 
             foreach(CustomCursor cursor in allCustomCursors)
             {
-                cursor.Inject(this, input);
-                cursor.gameObject.SetActive(false);
+                if(cursor != CurrentCursor)
+                    cursor.gameObject.SetActive(false);
             }
         }
 
@@ -57,6 +57,7 @@ namespace InteractiveKitchen.Cursors
 
         void Update()
         {
+            #region Debug stuff
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 ForceChangeCursorPosition(new Vector2(Screen.width/2, Screen.height/2));
@@ -70,6 +71,7 @@ namespace InteractiveKitchen.Cursors
             {
                 ChangeCursor<KnifeCursor>();
             }
+            #endregion
         }
         void OnDisable()
         {

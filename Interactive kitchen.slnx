@@ -27,6 +27,7 @@
   <Project Path="Zenject-Editor.csproj" />
   <Project Path="Unity.UnifiedRayTracing.Runtime.csproj" />
   <Project Path="Unity.InternalAPIEngineBridge.004.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.Burst.CodeGen.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
   <Project Path="Unity.PerformanceTesting.csproj" />
@@ -45,7 +46,6 @@
   <Project Path="Zenject-TestFramework.csproj" />
   <Project Path="UnityEditor.UI.Analytics.csproj" />
   <Project Path="Zenject-PoolMonitor-Editor.csproj" />
-  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="Unity.InputSystem.TestFramework.csproj" />
   <Project Path="Unity.ShaderGraph.Utilities.csproj" />
   <Project Path="Rowlan.Fullscreen.Runtime.csproj" />

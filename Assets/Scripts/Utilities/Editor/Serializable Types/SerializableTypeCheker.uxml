@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:Label text="SerializableType fields Checker" name="Header" style="justify-content: center; align-self: center; background-color: rgba(255, 255, 255, 0); text-overflow: clip; white-space: normal; -unity-font-style: bold;"/>
+        <ui:Foldout text="Description" name="Description">
+            <ui:Label text="Checks ALL gameobjects in currently open scene. If they have a MonoBehaviour derived class attached to them, and if that monobehaviour contains a field/property of type SerializableType, it checks if the serialized value of that field can correctly match to an existing type. If not it displays the name of that GameObject to make it easier for you to fix it." name="Description" style="justify-content: center; align-self: center; background-color: rgba(255, 255, 255, 0); text-overflow: clip; white-space: normal;"/>
+        </ui:Foldout>
+        <ui:Button text="Check SerializableTypes" selectable="false" focusable="false" name="CheckButton" double-click-selects-word="false" triple-click-selects-line="false" style="flex-shrink: 0; flex-grow: 0; opacity: 1; margin-left: 15px; margin-right: 15px; margin-top: 0; margin-bottom: 0; -unity-text-generator: standard;"/>
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Label text="Detected GameObjects (Paths)" name="DetectedPaths" enabled="true" style="margin-left: 15px; margin-top: 15px; margin-bottom: 5px; -unity-font-style: bold;"/>
+            <ui:ListView show-border="false" name="FoundGameObjectsList" enabled="true" style="margin-left: 15px;"/>
+            <ui:Label text="No Broken SerializableType detected :D" name="AllGoodLabel" enabled="true" style="margin-left: 15px; margin-top: 15px; margin-bottom: 5px; -unity-font-style: bold; color: rgb(0, 221, 157);"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

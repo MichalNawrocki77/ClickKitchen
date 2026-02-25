@@ -5,6 +5,8 @@ using static UnityEngine.InputSystem.InputAction;
 using System.Linq;
 using InteractiveKitchen.Debugging;
 using Zenject;
+using System;
+using System.Collections.Generic;
 
 namespace InteractiveKitchen.Cursors
 {    
@@ -18,7 +20,7 @@ namespace InteractiveKitchen.Cursors
         [SerializeField] bool HideCursor;
         #endif
 
-        [Inject] CustomCursor[] allCustomCursors;
+        [Inject] Dictionary<Type, CustomCursor> allCustomCursors;
         public CustomCursor CurrentCursor { get; private set; }
 
 
@@ -28,7 +30,7 @@ namespace InteractiveKitchen.Cursors
             if(!input.UI.enabled)
                 input.UI.Enable();
 
-            foreach(CustomCursor cursor in allCustomCursors)
+            foreach(CustomCursor cursor in allCustomCursors.Values)
             {
                 if(cursor != CurrentCursor)
                     cursor.gameObject.SetActive(false);
@@ -100,8 +102,16 @@ namespace InteractiveKitchen.Cursors
         }
 
         public T GetCustomCursor<T>() where T : CustomCursor =>
-            allCustomCursors.FirstOrDefault(cursor => cursor is T) as T;
+            GetCustomCursor(typeof(T)) as T;
 
+        public CustomCursor GetCustomCursor(Type cursorType)
+        {
+            if(allCustomCursors.ContainsKey(cursorType))
+                return allCustomCursors[cursorType];
+            else
+                return null;
+        } 
+        
         public void ChangeCursor<T>() where T : CustomCursor
         {
             CustomCursor newCursor = GetCustomCursor<T>();

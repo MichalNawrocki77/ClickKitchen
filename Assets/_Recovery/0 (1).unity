@@ -14167,13 +14167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CursorCheckTest
   cursorType:
-    assemblyQualifiedName: ForkCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  cursorType2:
-    assemblyQualifiedName: ForkCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  <cursorTypeProp>k__BackingField:
-    assemblyQualifiedName: ForkCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    assemblyQualifiedName: KnifeCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
 --- !u!4 &1313261038
 Transform:
@@ -20465,7 +20459,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982095549}
-  - component: {fileID: 1982095550}
   m_Layer: 0
   m_Name: Furniture
   m_TagString: Untagged
@@ -20496,27 +20489,6 @@ Transform:
   - {fileID: 786327385}
   m_Father: {fileID: 1363506234}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1982095550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982095548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10086218ae997f04e894bef712b30462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CursorCheckTest
-  cursorType:
-    assemblyQualifiedName: ForkCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  cursorType2:
-    assemblyQualifiedName: KnifeCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  <cursorTypeProp>k__BackingField:
-    assemblyQualifiedName: ForkCursor, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!1001 &1984507093
 PrefabInstance:
   m_ObjectHideFlags: 0

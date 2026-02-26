@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Interactable Objects Settings
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObjectsSettings
   InteractableLayer: 6
-  FridgeAnimTargetScale: {x: 0.7, y: 1.3, z: 0.7}
+  FridgeAnimTargetScale: {x: 0.999, y: 0.999, z: 0.999}
   FridgeScaleUpTime: 0.1
-  FridgeScaleAnimInterval: 0.25
-  FridgeScaleUpEase: 17
+  FridgeScaleAnimInterval: 0
+  FridgeScaleUpEase: 1
   FridgeScaleDownTime: 0.1
-  FridgeScaleDownEase: 18
+  FridgeScaleDownEase: 1
   FridgeDoorOpenRotation: -150
   FridgeDoorOpenTime: 0.25
   FridgeDoorOpenEase: 6

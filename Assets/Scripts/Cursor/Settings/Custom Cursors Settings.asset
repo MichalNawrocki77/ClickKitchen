@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a50ca88540cc2e47b9c8e71cf5d5c5c, type: 3}
+  m_Name: Custom Cursors Settings
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveKitchen.Cursors.CustomCursorsSettings
+  forkAnimPixelsLength: 7.5
+  forkAnimTime: 0.05
+  forkAnimEase: 17
+  knifeSlashRotationDegrees: 15
+  knifeSlashInDuration: 0.05
+  knifeSlashInEase: 17
+  knifeSlashOutDuration: 0.1
+  knifeSlashOutEase: 18

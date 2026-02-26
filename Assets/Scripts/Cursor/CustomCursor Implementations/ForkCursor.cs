@@ -1,54 +1,56 @@
 using DG.Tweening;
 using UnityEngine;
+using Zenject;
 using static UnityEngine.InputSystem.InputAction;
 
-public class ForkCursor : CustomCursor
+namespace InteractiveKitchen.Cursors
 {
-    [Header("Settings")]
-    [SerializeField] float clickAnimPixelsLength;
-    [SerializeField] float clickAnimTime;
-    [SerializeField] Ease clickAnimEase;
     
-    Sequence currentImpaleSequence;
-    RectTransform rectTransform;
-    void Awake()
+    public class ForkCursor : CustomCursor
     {
-        rectTransform = transform as RectTransform;
-    }
-
-    public override void OnSelected()
-    {
-        input.UI.Click.performed += OnClick;
-    }
-
-    public override void OnDeselected()
-    {
-        input.UI.Click.performed -= OnClick;
-    }
-    void OnClick(CallbackContext ctx)
-    {
-        DOImpale();
-    }
-
-    Sequence DOImpale()
-    {
-        if(currentImpaleSequence != null)
-            currentImpaleSequence.Complete(true);
-
-
-        Vector2 initialPos = rectTransform.anchoredPosition;
-        //Current position + (-1,-1) * clickAnimPixelsLength;
-        Vector2 targetPos = initialPos + Vector2.one * -clickAnimPixelsLength;
+        [Inject] CustomCursorsSettings settings;
         
-        currentImpaleSequence = DOTween.Sequence(); 
-        currentImpaleSequence.Append(rectTransform.DOAnchorPos(targetPos, clickAnimTime)
-            .SetEase(clickAnimEase));
+        Sequence currentImpaleSequence;
+        RectTransform rectTransform;
+        void Awake()
+        {
+            rectTransform = transform as RectTransform;
+        }
 
-        currentImpaleSequence.Append(rectTransform.DOAnchorPos(initialPos, clickAnimTime)
-            .SetEase(clickAnimEase));
+        public override void OnSelected()
+        {
+            input.UI.Click.performed += OnClick;
+        }
 
-        currentImpaleSequence.SetUpdate(true);
-        currentImpaleSequence.OnComplete(() => currentImpaleSequence = null);
-        return currentImpaleSequence;
+        public override void OnDeselected()
+        {
+            input.UI.Click.performed -= OnClick;
+        }
+        void OnClick(CallbackContext ctx)
+        {
+            DOImpale();
+        }
+
+        Sequence DOImpale()
+        {
+            if(currentImpaleSequence != null)
+                currentImpaleSequence.Complete(true);
+
+
+            Vector2 initialPos = rectTransform.anchoredPosition;
+            //Current position + (-1,-1) * clickAnimPixelsLength;
+            Vector2 targetPos = initialPos + Vector2.one * -settings.forkAnimPixelsLength;
+            
+            currentImpaleSequence = DOTween.Sequence(); 
+            currentImpaleSequence.Append(rectTransform.DOAnchorPos(targetPos, settings.forkAnimTime)
+                .SetEase(settings.forkAnimEase));
+
+            currentImpaleSequence.Append(rectTransform.DOAnchorPos(initialPos, settings.forkAnimTime)
+                .SetEase(settings.forkAnimEase));
+
+            currentImpaleSequence.SetUpdate(true);
+            currentImpaleSequence.OnComplete(() => currentImpaleSequence = null);
+            return currentImpaleSequence;
+        }
     }
 }

@@ -7,9 +7,11 @@ public class TypeFilterAttribute : PropertyAttribute
 
     public TypeFilterAttribute(Type FilterType)
     {
-        Filter = type => type.Inherits(FilterType) &&
-                          !type.IsAbstract &&
-                          !type.IsInterface &&
-                          !type.IsGenericType;
+        Filter = type => (type.IsAbstract && type == FilterType)
+                         ||
+                         (type.Inherits(FilterType) &&
+                         !type.IsAbstract &&
+                         !type.IsInterface &&
+                         !type.IsGenericType);
     }
 }

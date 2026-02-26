@@ -4,29 +4,33 @@ using InteractiveKitchen.Cursors;
 using UnityEngine;
 using Zenject;
 
-public class CursorManagerInstaller : MonoInstaller
+namespace InteractiveKitchen.Cursors
 {
-    [SerializeField] CursorManager cursorManager;
-    public override void InstallBindings()
+    
+    public class CursorManagerInstaller : MonoInstaller
     {
-        CustomCursor[] cursors = cursorManager != null ? 
-            cursorManager.GetComponentsInChildren<CustomCursor>(true) :
-            GetComponentsInChildren<CustomCursor>(true);
-        
-        if(cursorManager != null)
-            Container.Bind<CursorManager>().FromInstance(cursorManager).AsSingle();
-        
-        if(cursors != null && cursors.Length > 0)
+        [SerializeField] CursorManager cursorManager;
+        public override void InstallBindings()
         {
-            Dictionary<Type,CustomCursor> AllCursors = new Dictionary<Type, CustomCursor>();
-            foreach(CustomCursor cursor in cursors)
+            CustomCursor[] cursors = cursorManager != null ? 
+                cursorManager.GetComponentsInChildren<CustomCursor>(true) :
+                GetComponentsInChildren<CustomCursor>(true);
+            
+            if(cursorManager != null)
+                Container.Bind<CursorManager>().FromInstance(cursorManager).AsSingle();
+            
+            if(cursors != null && cursors.Length > 0)
             {
-                Type cursorType = cursor.GetType();
-                AllCursors.Add(cursorType, cursor);
+                Dictionary<Type,CustomCursor> AllCursors = new Dictionary<Type, CustomCursor>();
+                foreach(CustomCursor cursor in cursors)
+                {
+                    Type cursorType = cursor.GetType();
+                    AllCursors.Add(cursorType, cursor);
 
-                Container.Bind(cursorType).FromInstance(cursor);
+                    Container.Bind(cursorType).FromInstance(cursor);
+                }
+                Container.Bind<Dictionary<Type, CustomCursor>>().FromInstance(AllCursors).AsSingle();
             }
-            Container.Bind<Dictionary<Type, CustomCursor>>().FromInstance(AllCursors).AsSingle();
         }
     }
 }

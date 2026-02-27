@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Interactable Objects Settings
   m_EditorClassIdentifier: Assembly-CSharp::InteractableObjectsSettings
   InteractableLayer: 6
+  PlaneNormal: {x: 0, y: 1, z: 0}
+  PlanePoint: {x: 0, y: 1.65, z: 0}
   FridgeAnimTargetScale: {x: 0.999, y: 0.999, z: 0.999}
   FridgeScaleUpTime: 0.1
   FridgeScaleAnimInterval: 0

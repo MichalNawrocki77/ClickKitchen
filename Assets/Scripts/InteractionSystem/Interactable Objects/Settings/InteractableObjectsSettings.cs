@@ -8,6 +8,12 @@ public class InteractableObjectsSettings : ScriptableObject
     [Header("Global Settings")]
     public int InteractableLayer;
 
+    [Header("Plane Draggable Object")]
+    public Vector3 PlaneNormal;
+    public Vector3 PlanePoint;
+    public float DraggableObjFlyBackTime;
+    public Ease DraggableObjFlyBackEase;
+
     [Header("Fridge")]
     public Vector3 FridgeAnimTargetScale;
     public float FridgeScaleUpTime;

@@ -1483,6 +1483,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 543450652289899338}
+  - {fileID: 543450653140537471}
   m_Father: {fileID: 318510142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &132492176
@@ -3128,7 +3129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Zenject::Zenject.SceneContext
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: fb8593e2a9ce57840b794d473c547ffc, type: 2}
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 541350520}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -6553,6 +6555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 541350517}
   - component: {fileID: 541350516}
+  - component: {fileID: 541350520}
   - component: {fileID: 541350515}
   - component: {fileID: 541350518}
   - component: {fileID: 541350519}
@@ -6697,6 +6700,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   m_MaxRayIntersections: 100
+--- !u!114 &541350520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541350514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b90c4847bb95ccf408e960b2c66c23b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraInstaller
+  MainCam: {fileID: 0}
 --- !u!1001 &556427841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7728,6 +7744,48 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5f3c20509f5b6045a72a6cd136b0a93, type: 3}
   m_PrefabInstance: {fileID: 596021255}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &601372567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148682001093}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.95000005, y: 0.85719955, z: 0.95}
+  m_Center: {x: -0.000000014901161, y: 0.42859977, z: 0}
+--- !u!114 &601372568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148682001093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f134f8a15147540852419ad0727f54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractiveKitchen.InteractionSystem.MouseDragDetector
+  <OnInteractionStart>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnInteractionTick>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <OnInteractionEnd>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &602824125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21657,6 +21715,111 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2767323997933857422, guid: b83aa12e479f59a4b88b110a6fd86eb0, type: 3}
   m_PrefabInstance: {fileID: 4128723818485429405}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &543450653140537471
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148682001093}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.32, y: 1.59989, z: 5.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 129098899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &919132148682001093
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 543450653140537471}
+  - component: {fileID: 3469287836990726107}
+  - component: {fileID: 601372568}
+  - component: {fileID: 601372567}
+  - component: {fileID: 3469287836990726106}
+  - component: {fileID: 1711813856151120656}
+  m_Layer: 6
+  m_Name: Pickapble Burger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1711813856151120656
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148682001093}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -1724080987372072942, guid: f1e3f8cbe1f2b0e4da4ca4342fa8ce85, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &3469287836990726106
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148682001093}
+  m_Mesh: {fileID: -2646811599292358415, guid: f1e3f8cbe1f2b0e4da4ca4342fa8ce85, type: 3}
+--- !u!114 &3469287836990726107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148682001093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c4134d26f73b3a48ae05260c3c1179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlaneDraggableObject
 --- !u!1001 &4128723818485429405
 PrefabInstance:
   m_ObjectHideFlags: 0

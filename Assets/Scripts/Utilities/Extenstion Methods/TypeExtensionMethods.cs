@@ -2,21 +2,25 @@ using System;
 using System.Linq;
 using ModestTree;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public static class TypeExtensionMethods
-{
-    public static bool Inherits(this Type type, Type inheritedType)
+namespace InteractiveKitchen.Utilities
+{    
+    public static class TypeExtensionMethods
     {
-        Type currentlyCheckedType = type.BaseType;
-        while(currentlyCheckedType != typeof(object) && currentlyCheckedType != null)
+        public static bool Inherits(this Type type, Type inheritedType)
         {
-            if(currentlyCheckedType == inheritedType) return true;
+            Type currentlyCheckedType = type.BaseType;
+            while(currentlyCheckedType != typeof(object) && currentlyCheckedType != null)
+            {
+                if(currentlyCheckedType == inheritedType) return true;
 
-            Type[] interfaces = currentlyCheckedType.Interfaces();
-            if(interfaces != null && interfaces.Contains(inheritedType)) return true;
-        
-            currentlyCheckedType = currentlyCheckedType.BaseType;
+                Type[] interfaces = currentlyCheckedType.Interfaces();
+                if(interfaces != null && interfaces.Contains(inheritedType)) return true;
+            
+                currentlyCheckedType = currentlyCheckedType.BaseType;
+            }
+            return false;
         }
-        return false;
     }
 }

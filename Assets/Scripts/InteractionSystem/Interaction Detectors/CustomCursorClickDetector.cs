@@ -4,6 +4,7 @@ using InteractiveKitchen.Cursors;
 using UnityEngine.Events;
 using Zenject;
 using System;
+using InteractiveKitchen.Utilities;
 
 namespace InteractiveKitchen.InteractionSystem
 {

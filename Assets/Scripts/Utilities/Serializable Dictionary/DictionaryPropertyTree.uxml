@@ -1,0 +1,6 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:VisualElement name="Added_Element" style="flex-grow: 1;">
+        <uie:PropertyField name="AddedValue" style="height: 36px; width: 171px;"/>
+        <uie:PropertyField name="AddedKey" style="height: 33px; width: 168px;"/>
+    </ui:VisualElement>
+</ui:UXML>

@@ -44,6 +44,7 @@ public class PlaneDraggableObject : MonoBehaviour
         if(flyBackTween != null)
         {
             flyBackTween.Kill(true);
+            flyBackTween = null;
         }
         else
         {

@@ -1,17 +1,20 @@
 using System;
 using UnityEngine;
 
-public class TypeFilterAttribute : PropertyAttribute
-{
-    public Func<Type, bool> Filter { get; }
-
-    public TypeFilterAttribute(Type FilterType)
+namespace InteractiveKitchen.Utilities
+{    
+    public class TypeFilterAttribute : PropertyAttribute
     {
-        Filter = type => (type.IsAbstract && type == FilterType)
-                         ||
-                         (type.Inherits(FilterType) &&
-                         !type.IsAbstract &&
-                         !type.IsInterface &&
-                         !type.IsGenericType);
+        public Func<Type, bool> Filter { get; }
+
+        public TypeFilterAttribute(Type FilterType)
+        {
+            Filter = type => (type.IsAbstract && type == FilterType)
+                            ||
+                            (type.Inherits(FilterType) &&
+                            !type.IsAbstract &&
+                            !type.IsInterface &&
+                            !type.IsGenericType);
+        }
     }
 }
